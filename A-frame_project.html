@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="pix/ico/favicon.ico">
+
+  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  <title>A-Frame Starter</title>
+</head>
+
+<body>
+  <a-scene>
+
+    <!--assets are items meant to preload-->
+    <!-- I give the asset an ID and reference it in the "material" of the "logohedron"-->
+    <a-assets>
+      <img id="logo" src="pix/IAM_logo.png">
+    </a-assets>
+
+    <!--box-->
+    <a-entity 
+    geometry="primitive: box" 
+    material="color: #4CC3D9" 
+    position="-1 0.5 -3" 
+    rotation="0 45 0">
+    </a-entity>
+
+    <!--sphere-->
+    <a-entity 
+    geometry="primitive: sphere; radius: 1.25" 
+    material="color: #EF2D5E" 
+    position="0 1.25 -5">
+    </a-entity>
+
+    <!--cylinder-->
+    <a-entity 
+    geometry="primitive: cylinder; radius: 0.5; height: 1.5" 
+    material="color: #FFC65D"
+    position="1 0.75 -3"></a-entity>
+
+    <!--plane-->
+    <a-entity 
+    geometry="primitive: plane; width: 12; height: 12" 
+    material="color: #7BC8A4" 
+    position="0 0 -4"
+    rotation="-90 0 0"></a-entity>
+
+    <!--"logohedron"-->
+    <!--notice I'm using a reference to the asset's ID-->
+    <a-entity 
+    geometry="primitive: octahedron; radius: 0.3" 
+    position="0 3.5 -5" 
+    rotation="0 0 0"
+    material="src:#logo; repeat: 4 1"
+    animation__rot="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear"
+    animation__pos="property: position; to : 0 4 -5; dir: alternate; loop: true; easing: easeInOutSine; dur: 2000 ">
+  </a-entity>
+
+    <!--sky-->
+    <!--notice that the "sky" here is not in the <a-entity> format-->
+    <!--"sky" is not meant as a geometry in the scene but a background-->
+    <a-sky color="#000000"></a-sky>
+
+  </a-scene>
+</body>
+
+</html>
