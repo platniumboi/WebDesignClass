@@ -15,12 +15,16 @@
       <img id="logo" src="pix/IAM_logo.png">
     </a-assets>
 
-    <a-entity geometry="primitive: sphere; radius: 0.3" position="0 -3 0" rotation="0 0 0" material="color: #4CC3D9" animation__rot="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear"
+    <a-entity geometry="primitive: sphere; radius: 0.3" position="0 0 0" rotation="0 0 0" material="color: #4CC3D9" animation__rot="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear"
         <a-octahedron position="5 0 0" color="mediumseagreen"></a-sphere>
     >
  
     <!--this is a test block because it's not updating on the browser for some reason-->
-
+    <a-entity 
+    geometry="primitive: plane; width: 12; height: 12" 
+    material="color: #7BC8A4" 
+    position="0 0 -4"
+    rotation="-90 0 0"></a-entity>
     <!--sky-->
     <!--notice that the "sky" here is not in the <a-entity> format-->
     <!--"sky" is not meant as a geometry in the scene but a background-->
